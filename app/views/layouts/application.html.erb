@@ -4,12 +4,26 @@
     <title>AmazonSample</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/5a7478c47d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <%= stylesheet_link_tag 'application', media: 'all'  %>
+    <%= javascript_pack_tag 'application' %>
+    <%# <script src="../../javascript/product.js"></script> %>
+    
   </head>
 
   <body>
+  <header class="header">
+   
+    <div class="header-nav">
+      <i class="fa-solid fa-bars" id="lists"></i>
+      <%= link_to "Cording.co.jp", root_path,class:"root"%>
+      <%= link_to "ログイン", root_path,class:"login"%>
+    </div>
+  </header>
+    <div class="menu-nav">
+    <%= render "side_bar" %>
+    </div>
     <%= yield %>
   </body>
 </html>

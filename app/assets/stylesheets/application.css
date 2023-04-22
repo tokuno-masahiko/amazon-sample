@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+* {
+  box-sizing: border-box;
+}
+
+/* header */
+
+header {
+  background-color: rgb(169, 166, 166);
+  
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  width: 500px;
+}
+
+.fa-solid {
+  float: left;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.root {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
+
+.login {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
+
+/* products_index */
+
+
+/* side_bar */
+
+.wrapper {
+  display: none;
+}
