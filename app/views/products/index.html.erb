@@ -1,7 +1,7 @@
 <div class="product-wrapper">
   <h2 class='title'>Cordingアイテム一覧</h2>
     <ul class='item-lists'>
-      <% @items.each do |item|%>
+      <% @products.each do |product|%>
       <li class='list'>
         <%= link_to product_path(product.id) do %>
         <div class='item-img-content'>
