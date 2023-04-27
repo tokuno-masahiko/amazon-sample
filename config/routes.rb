@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     resources :purchases
   end
 
-  authenticated :admins do
-    root to: "admins/dashboards#index", as: :admin_root
+  namespace :admins do
+    root to: 'dashboards#index'
   end
   
 end

@@ -44,23 +44,11 @@ header {
   font-size: 30px;
 }
 
-/* .login {
-  text-decoration: none;
-  color: white;
-  font-size: 30px;
-}
-
-.signup {
-  text-decoration: none;
-  color: white;
-  font-size: 30px;
-} */
-
-/* products_index */
-
-
-/* side_bar */
-
 .wrapper {
   display: none;
+}
+
+.purchase-btn-icon {
+  width: 60%;
+  color: aquamarine;
 }

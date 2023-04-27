@@ -1,1 +1,39 @@
-あ
+<div class="product-wrapper">
+<div class="user_name">
+<% if admin_signed_in? %>
+ <p><%= "#{current_admin.name}さんがログイン中です" %> </p>
+<% end %>
+<div>
+<%= link_to new_product_path, class: 'purchase-btn' do %>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <span class='purchase-btn-text'>出品する</span>
+<% end %>
+</div>
+</div>
+  <h2 class='title'>Cordingアイテム一覧</h2>
+    <ul class='product-lists'>
+      <% @products.each do |product|%>
+      <li class='list'>
+        <%= link_to product_path(product.id) do %>
+        <div class='product-img-content'>
+          <%= image_tag product.image, class: "product-img" %>
+
+          <% if product.purchase.present? %>
+          <div class='sold-out'>
+            <span>Sold Out!!</span>
+          </div>
+          <% end %>
+
+        </div>
+        <div class='product-info'>
+          <h3 class='product-name'>
+            <%= product.title %>
+          </h3>
+          <div class='product-price'>
+            <span><%= product.fee %>円<br><%= item.fee.name %></span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end%>
+</div>
