@@ -12,4 +12,12 @@ Rails.application.routes.draw do
     confirmations: "users/confirmations"
   }
   root to: "products#index"
+  resources :products do
+    resources :purchases
+  end
+
+  authenticated :admins do
+    root to: "admins/dashboards#index", as: :admin_root
+  end
+  
 end

@@ -29,7 +29,7 @@ header {
   justify-content: space-around;
   align-items: center;
   height: 60px;
-  width: 500px;
+  width: 900px;
 }
 
 .fa-solid {
@@ -38,17 +38,23 @@ header {
   cursor: pointer;
 }
 
-.root {
+.root, .login, .signup, .logout  {
   text-decoration: none;
   color: white;
   font-size: 30px;
 }
 
-.login {
+/* .login {
   text-decoration: none;
   color: white;
   font-size: 30px;
 }
+
+.signup {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+} */
 
 /* products_index */
 

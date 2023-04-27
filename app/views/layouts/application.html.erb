@@ -17,13 +17,50 @@
    
     <div class="header-nav">
       <i class="fa-solid fa-bars" id="lists"></i>
-      <%= link_to "Cording.co.jp", root_path,class:"root"%>
-      <%= link_to "ログイン", root_path,class:"login"%>
+      <%= link_to "Cording.co.jp", root_path,class:"root" %>
+    <% if admin_signed_in? %>
+      <%= link_to "管理者ログアウト", destroy_admin_session_path, class:"logout", method: :delete %>
+    <% else %>
+    <% if user_signed_in? %>
+      <%= link_to "ログアウト", destroy_user_session_path, class:"logout", method: :delete %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path,class:"login" %>
+      <%= link_to "新規登録", new_user_registration_path,class:"signup" %>
+      <%= link_to "管理者ログイン", new_admin_session_path, class: "login" %>
+    <% end %>
+    <% end %>
     </div>
   </header>
-    <div class="menu-nav">
-    <%= render "side_bar" %>
-    </div>
+    <div id="wrapper_list" class="wrapper">
+  <div class="show-wrapper">
+    <p class="show-cording">
+    閲覧する</br>
+    Cording
+    </p>
+    <%= link_to "サインイン", root_path, class: "signin" %>
+  </div>
+  <div class="wrapper-lists">
+    <%= link_to "Cordingのホーム", root_path, class: "show-home" %>
+    <ul class="show-lists">
+      <li>人気・新着の商品</li>
+      <li>ランキング</li>
+      <li>新着商品</li>
+      <li>人気度ランキング</li>
+    </ul>
+    <ul class="show-lists">
+      <li>トップカテゴリー</li>
+      <li>ドラッグストア</li>
+      <li>本</li>
+      <li>パソコン</li>
+    </ul>
+    <ul class="show-lists">
+      <li>プログラムと特典</li>
+      <li>タイムセール</li>
+      <li>プライムを試す</li>
+      <li>Cordingランキング</li>
+    </ul>
+  </div>
+</div>
     <%= yield %>
   </body>
 </html>

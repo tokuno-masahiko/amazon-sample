@@ -1,29 +1,30 @@
 <div class="product-wrapper">
+<div class="user_name">
+<% if user_signed_in? %>
+ <p><%= "#{current_user.name}さんがログイン中です" %> </p>
+<% end %>
+</div>
   <h2 class='title'>Cordingアイテム一覧</h2>
-    <ul class='item-lists'>
+    <ul class='product-lists'>
       <% @products.each do |product|%>
       <li class='list'>
         <%= link_to product_path(product.id) do %>
-        <div class='item-img-content'>
-          <%= image_tag product.image, class: "item-img" %>
+        <div class='product-img-content'>
+          <%= image_tag product.image, class: "product-img" %>
 
-          <% if item.purchase.present? %>
+          <% if product.purchase.present? %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
           <% end %>
 
         </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <div class='product-info'>
+          <h3 class='product-name'>
             <%= product.title %>
           </h3>
-          <div class='item-price'>
+          <div class='product-price'>
             <span><%= product.fee %>円<br><%= item.fee.name %></span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
           </div>
         </div>
         <% end %>
