@@ -3,10 +3,10 @@
 <% if admin_signed_in? %>
  <p><%= "#{current_admin.name}さんがログイン中です" %> </p>
 <% end %>
-<div>
+<div class = "btn">
 <%= link_to new_product_path, class: 'purchase-btn' do %>
-  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-  <span class='purchase-btn-text'>出品する</span>
+  <%= image_tag 'icon_camera.png' ,class: "purchase-btn-icon" %>
+  <div class='purchase-btn-text'>新規出品</div>
 <% end %>
 </div>
 </div>
